@@ -1,0 +1,367 @@
+@import "./Colors.scss";
+@import "./Props.scss";
+@import "./media.scss";
+@import "./uifonts.scss";
+
+.font{font-family: 'Montserrat', sans-serif;}
+.fontr{font-family: 'Varela Round', sans-serif;}
+@mixin bgImage($radius: 50%) { 
+    height: 100%;
+    width: 100%;
+    border-radius: $radius;
+    background-color: #e2e2e2;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+}
+
+.wrapWidth {
+    width: 1200px;
+    margin: 0 auto;
+    @include media("<=large"){width: 1140px;}
+    @include media("<=desktop"){width: 960px;}
+    @include media("<=tablet"){width: 720px;}
+    @include media("<=phoneH"){width: 580px;}
+    @include media(">=phone", "<410px"){width: 340px;}
+    @include media(">=410px", "<=480px"){width: 380px;}
+}
+
+// Header 
+.header{
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    z-index: 999;
+    @include media(">=phone", '<=480px'){height: 70px;}
+    &.bg{
+        background: #ffff;
+        border-bottom: 1px solid #ddd;
+    }
+    .lit{.logo{@include media(">=phone", '<=480px'){font-size: 32px;}}}
+    .srch{
+        margin-left: 30px;
+        @include anim(0.4s);
+        &.hide{width: 300px;}
+        &.display{
+            width: 650px;
+            @include media("<=tablet"){width: 100%;}
+        }
+        @include media(">=phone", "<=480px"){margin-left: 12px;}
+        .srch-loc{
+            box-shadow: none;
+            @include media("<=tablet"){padding: 0px 0px;}
+            .feild{
+                background: #f8f8f8;
+                border-color: #f8f8f8;
+                @include media("<=tablet"){margin-right: 0px;}
+                &:focus-within{
+                    background: transparent;
+                    border-color: $themeColor;
+                }
+            }
+        }
+    }
+}
+
+// footer
+.footer{
+    background: #000;
+    .wrap{
+        padding: 60px 0px 150px 0px;
+      @include media('<=tablet'){flex-wrap: wrap;}
+      @include media(">phone", "<=480px"){padding: 22px 0px 40px 0px;}
+      .col{
+        flex: 1;
+        &:nth-child(1){flex: 2;}
+        @include media(">=phone", "<=480px"){
+            margin-bottom: 60px;
+            min-width: 100%;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            &:last-child{margin-bottom: 0px;}
+        }
+        .logo{
+            @include media(">=phone", "<=480px"){
+                margin-bottom: 10px;
+                font-size: 32px;
+            }
+        }
+        .lin{
+          color:#fff;
+          margin-bottom: 25px;
+          @include media(">=phone", "<=480px"){margin-bottom: 20px;}
+          &:last-child{margin-bottom: 0px;}
+          &:hover{text-decoration: underline;}
+        }
+        .social{
+            height: 100%;
+            align-items: flex-end;
+          .item{
+            justify-content: center;
+            background: #fff;
+            height: 38px;
+            width: 38px;
+            min-width: 38px;
+            border-radius: 2px;
+            margin-right: 15px;
+            color: #000;
+            &:hover{
+              background: $themeColor;
+              color: #fff;
+              .ico{color: #fff;}
+            }
+            .ico{
+                font-size: 20px;
+                color: $themeColor;
+            }
+          }
+        }
+      }
+    } 
+    .cpy-rit{
+        padding: 20px 0px;
+        border-top: 1px solid #ddd;
+        @include media(">=phone", "<=480px"){padding: 14px 0px;}
+        .txt{
+            text-align: center;
+            @include media(">=phone", "<=480px"){font-size: 14px;}
+        }
+    }
+}
+  
+// Resturant Card
+.rst-crd{
+    width: 100%;
+    cursor: pointer;
+    &:hover{.img{transform: scale(1.05);}}
+    .media{  
+        width: 100%;
+        height: 180px;
+        overflow: hidden;
+        @include media(">=phone", "<=480px"){height: 150px;}
+        .img{@include bgImage(0px);}
+    }
+    .blk{
+        .nam{
+            margin-top: 12px;
+            margin-bottom: 7.5px;
+        }
+        .row{
+            justify-content: space-between;
+            .item{.ico{margin-right: 4px;}}
+        }
+    }
+}
+// Download Card
+.dwld-blk{
+    width: 100%;
+    background: $themeColor;
+    padding: 60px 40px;
+    border-radius: 3px;
+    @include media("<=tablet"){padding: 20px 24px;}
+    @include media("<=phoneH"){flex-direction: column-reverse;}
+    @include media(">=phone", "<=480px"){padding: 22px 15px;}
+    .lef{
+      flex: 1.3;
+      .tit{
+          margin-bottom: 20px;
+          @include media("<=tablet"){
+            font-size: 22px;
+            margin-bottom: 18px;
+          }
+        }
+        .lb{
+            line-height: 1.5;
+            @include media("<=tablet"){
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+        .txt{
+            line-height: 1.5;
+            @include media("<=tablet"){
+                font-size: 14px;
+                font-weight: 400;
+            }
+        }
+      .actions{
+        margin-top: 25px;
+        .lbl{margin-bottom: 10px;}
+        .lin{
+          margin-right: 12px;
+          .img{height: 42px;}
+        }
+      }
+    }
+    .rig{
+      flex: 1;
+      justify-content: center;
+      @include media("<=phoneH"){min-height: 250px;}
+      @include media(">=phone", "<=480px"){min-height: 185px;}
+      .img{
+        height: 450px; 
+        top: -70px;
+        right: 100px;
+        @include media("<=tablet"){
+            height: 370px;
+            top: -50px;
+            right: 10px;
+        }
+        @include media("<=phoneH"){
+            right: 29%;
+            height: 350px;
+            top: -100px;
+        }
+        @include media(">=phone", "<=480px"){
+            right: 22%;
+            height: 280px;
+        }
+      }
+    }
+}
+
+// Search Location 
+.srch-loc{
+    box-shadow: 0 2px 25px 0 rgba(0, 0, 0, 0.12);
+    width: 100%;
+    padding: 14px 18px;
+    background: #fff;
+    @include media(">=phone", "<=480px"){padding: 14px 12px;}
+    .feild{
+        width: 100%;
+        border: 1px solid #dcdcdc;
+        padding: 13px 18px;
+        margin-right: 10px;
+        &:focus-within{border-color: $themeColor;}
+        @include media(">=phone", "<=480px"){
+            padding: 13px 12px;
+            margin-right: 8px;
+        }
+        .iput{
+            width: 100%;
+            @include media(">=phone", "<=480px"){font-size: 14px;}
+        }
+    }
+    .button{
+        height: 100%;
+        width: 140px;
+        padding: 14px;
+        @include media(">=phone", "<=480px"){
+            font-size: 14px;
+            font-weight: 500;
+            width: 100px;
+        }
+    }
+} 
+
+// Home Page
+.home-p{
+    overflow: hidden;
+    .sect-a{
+        height: 100vh;
+        width: 100vw;
+        background-color: #fbfbfb;
+        .cvr{
+            height: 100vh;
+            z-index: 0;
+            @include media("<=phoneH"){display: none;}
+            .img-l, .img-r{
+                height: 100%;
+                object-fit: cover;
+            }
+            .empty{width: 100%;}
+        }
+        .meta{
+            justify-content: center;
+            .srch{
+                margin-top: 30px;
+                max-width: 750px;
+            }
+            .slogn{
+                @include media("<=phoneH"){font-size: 32px;}
+                @include media(">=phone", "<=480px"){font-size: 28px;}
+            }
+            .msg{
+                margin-top: 22px;
+                .lin{&:hover{text-decoration: underline;}}
+            }
+        }
+    }
+    .sect-b{
+        padding: 60px 0px;
+        @include media(">=phone", "<=480px"){padding: 40px 0px;}
+        .meta{
+            width: 100%;
+            text-align: center;
+            margin-bottom: 40px;
+            @include media(">=phone", "<=480px"){margin-bottom: 20px;}
+            .title{
+                line-height: 1.5;
+                @include media(">=phone", "<=480px"){font-size: 28px;}
+            }
+        }
+        .wrap{ 
+            justify-content: space-between;
+            @include media("<=tablet"){
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 30px;
+                grid-row-gap: 60px;
+                justify-items: center;
+            }
+            @include media(">=phone", "<=480px"){grid-template-columns: repeat(1, 1fr);}
+            .item{
+                width: 220px;
+                .vector{
+                    width: 130px;
+                }
+                .lbl{margin: 12px 0px;}
+                .txt{text-align: center;}
+            }
+        }
+    }
+    .sect-c{
+        padding: 20px 0px 40px 0px;
+        .meta{
+            text-align: center;
+            margin-bottom: 40px;
+            .title{margin-bottom: 5px;}
+        }
+        .wrap{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-column-gap: 25px;
+            grid-row-gap: 30px;
+            @include media("<=tablet"){
+                grid-template-columns: repeat(3, 1fr);
+                grid-column-gap: 15px;
+                grid-row-gap: 25px;
+            }
+            @include media("<=phoneH"){
+                grid-template-columns: repeat(2, 1fr);
+                grid-column-gap: 15px;
+                grid-row-gap: 30px;
+            }
+        }
+    }
+    .sect-d{
+        padding: 140px 0px 120px 0px;
+        @include media("<=phoneH"){width: 100%;}
+    }
+    .sect-f{
+        margin-bottom: 120px;
+        .wrapWidth{
+            .title{margin-bottom: 30px;}
+            .content{
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                grid-column-gap: 100px;
+                grid-row-gap: 30px;
+                @include media("<=tablet"){grid-column-gap: 60px;}
+                @include media(">=phone", "<=480px"){grid-template-columns: repeat(2, 1fr);}
+            }
+        }
+    }
+}
