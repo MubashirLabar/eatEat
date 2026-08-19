@@ -97,7 +97,7 @@ return (
                 <img src='/images/sect-a-r.svg'  className='img-r'/> 
             </div>
             <div className='meta flex flex-col abs fill wrapWidth'>
-                <div className='slogn fontub s34 c000'>Order Resturant or Delivery Food Online</div>
+                <div className='slogn fontub s34 c000'>Order Food Resturant or delivery food online</div>
                 <div className='srch'><SearchLocation/></div>
                 <div className='msg flex aic'>
                     <Link to='/' className='lin font s15 b5 color'>Sign In&nbsp;</Link>
