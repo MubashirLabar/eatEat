@@ -256,6 +256,19 @@
     }
 } 
 
+// Booking Page
+.booking-p{
+    padding: 130px 0px 100px 0px;
+    min-height: 70vh;
+    @include media(">=phone", "<=480px"){padding: 100px 0px 60px 0px;}
+    .head{
+        margin-bottom: 40px;
+        .title{line-height: 1.5;}
+        .txt{margin-top: 6px;}
+    }
+    .widget-holder{width: 100%;}
+}
+
 // Home Page
 .home-p{
     overflow: hidden;
