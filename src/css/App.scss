@@ -38,7 +38,26 @@
         background: #ffff;
         border-bottom: 1px solid #ddd;
     }
-    .lit{.logo{@include media(">=phone", '<=480px'){font-size: 32px;}}}
+    .lit{
+        width: 100%;
+        justify-content: space-between;
+        .logo{@include media(">=phone", '<=480px'){font-size: 32px;}}
+    }
+    .nav{
+        margin-left: auto;
+        .nav-lin{
+            color: $themeColor;
+            padding: 8px 18px;
+            border: 1px solid $themeColor;
+            border-radius: 3px;
+            white-space: nowrap;
+            &:hover{
+                background: $themeColor;
+                color: #fff;
+            }
+            @include media(">=phone", "<=480px"){padding: 7px 14px;}
+        }
+    }
     .srch{
         margin-left: 30px;
         @include anim(0.4s);

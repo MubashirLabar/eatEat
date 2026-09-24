@@ -1,4 +1,5 @@
 import React,{useState, useEffect} from 'react'
+import { Link } from 'react-router-dom'
 import SearchLocation from './SearchLocation'
 
 function Header() {
@@ -22,6 +23,9 @@ function Header() {
                 <div className='lit flex aic'>
                     <div className='logo font s34 b6 color'>eat<span className='c000'>Eat</span></div>
                     <div className={`srch anim ${showSrch ? 'display' : 'hide'}`}><SearchLocation page='header' /></div>
+                    <div className='nav flex aic'>
+                        <Link to='/shop' className='nav-lin font s15 b5 anim'>Shop</Link>
+                    </div>
                 </div>
             </div>
         </div> 
